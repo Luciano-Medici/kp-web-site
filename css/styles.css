@@ -400,7 +400,8 @@ header {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .contenedor-catalogo {
+  .contenedor-catalogo, 
+  .contenedor-header{
     flex-direction: column;
   }
 
