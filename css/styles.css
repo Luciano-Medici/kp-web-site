@@ -1,0 +1,411 @@
+/* ------------------ VARIABLES ------------------ */
+:root {
+    --color-primario: #1A2E40;
+    --color-secundario: #F26B38;
+    --color-fondo: #F2F2F2;
+    --color-blanco: #FFFFFF;
+    --fuente-titulos: 'Bebas Neue', sans-serif;
+    --fuente-texto: 'Roboto', sans-serif;
+  }
+  
+  /* ------------------ RESET ------------------ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--fuente-texto);
+    background-color: var(--color-fondo);
+    color: var(--color-primario);
+    line-height: 1.6;
+  }
+  
+/* ------------------ HEADER ------------------ */
+header {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 10px 20px;
+  }
+  
+  .contenedor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .logo img {
+    width: 250px;
+    height: auto;
+  }
+  
+  /* ------------------ NAV ------------------ */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: var(--color-secundario);
+  }
+  
+  /* ------------------ HERO ------------------ */
+  .hero {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--color-blanco);
+  }
+  
+  .hero h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+
+  /* ------------------ DESTACADO ------------------ */
+  .destacado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+  
+  .destacado img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+/* ------------------ CTA WHATSAPP ------------------ */
+.cta-wsp {
+  background-color: var(--color-primario); /* azul oscuro */
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.cta-wsp h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-family: var(--fuente-titulos);
+}
+
+.cta-wsp p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128C7E;
+}
+
+  /* ------------------ FOOTER ------------------ */
+  footer {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+  }
+
+
+/* ------------------ CARRUSEL CON SCROLL MANUAL ------------------ */
+
+.carrusel-scroll {
+  position: relative; /* Permite posicionar los botones dentro del carrusel */
+  overflow: hidden;   /* Oculta las imágenes que están fuera del área visible */
+  width: 100%;        /* Ocupa todo el ancho del contenedor */
+  max-width: 100vw;   /* Asegura que no se pase del ancho de la pantalla */
+}
+
+.contenedor-scroll {
+  display: flex;                    /* Las imágenes se colocan una al lado de la otra */
+  transition: transform 0.5s ease;  /* Animación suave cuando cambia de imagen */
+  width: 300%;                      /* 3 imágenes => 100% * 3 */
+}
+
+.contenedor-scroll img {
+  width: 100vw;                     /* Cada imagen ocupa el 100% del ancho de la pantalla */
+  height: 400px;                    /* Altura fija del carrusel (podés ajustarla) */
+  object-fit: cover;                /* La imagen se recorta para llenar el espacio sin deformarse */
+  flex-shrink: 0;                   /* Evita que las imágenes se achiquen */
+  scroll-snap-align: start;         /* Opcional: para que se alinee bien en scroll horizontal */
+}
+
+/* ------------------ BOTONES ------------------ */
+.carrusel-btn {
+  position: absolute;             /* Permite superponer los botones sobre las imágenes */
+  top: 50%;                       /* Centra el botón verticalmente */
+  transform: translateY(-50%);    /* Ajusta el centro exacto del botón */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.carrusel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prev {
+  left: 10px;   /* Posiciona el botón de "anterior" a la izquierda */
+}
+
+.next {
+  right: 10px;  /* Posiciona el botón de "siguiente" a la derecha */
+}
+
+  /* ------------------ BOTÓN FLOTANTE WHATSAPP ------------------ */
+
+  .whatsapp-fijo {
+    position: fixed;
+    bottom: 70px;
+    right: 50px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+  
+  .whatsapp-fijo svg {
+    width: 100%;
+    height: 100%;
+    fill: #25D366; /* Color verde de WhatsApp */
+    transition: transform 0.2s ease;
+  }
+  
+  .whatsapp-fijo:hover svg {
+    transform: scale(1.1);
+    fill: #1eb250; /* Verde más oscuro al pasar el mouse */
+  }
+  
+/* ------------------ PÁGINA DE CONTACTO ------------------ */
+.contacto-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-page main {
+  flex: 1;
+}
+
+.contacto-page footer {
+  width: 100%;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+
+.contacto {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contacto h1 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contacto-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.contacto-info .datos p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.contacto-info .datos a {
+  color: var(--color-secundario);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ------------------ NOSOTROS ------------------ */
+.nosotros {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.nosotros h1 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.nosotros-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.nosotros .texto p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.nosotros .imagen img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.catalogo {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contenedor-catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Sidebar */
+.filtros {
+  flex: 1 1 200px;
+  background-color: var(--color-blanco);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.filtros h2 {
+  font-family: var(--fuente-titulos);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.filtros ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filtros button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: var(--color-primario);
+  cursor: pointer;
+  padding: 8px 12px;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.filtros button:hover,
+.filtros button.activo {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  border-radius: 4px;
+}
+
+/* Productos en grid */
+.productos {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.producto {
+  background-color: var(--color-blanco);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.producto:hover {
+  transform: scale(1.02);
+}
+
+.producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.producto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.producto .categoria {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.producto .precio {
+  font-weight: bold;
+  color: var(--color-secundario);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedor-catalogo {
+    flex-direction: column;
+  }
+
+  .filtros {
+    position: static;
+    width: 100%;
+  }
+}
