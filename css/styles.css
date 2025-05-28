@@ -1,144 +1,79 @@
-/* ------------------ VARIABLES ------------------ */
+/* =================== VARIABLES =================== */
 :root {
-    --color-primario: #1A2E40;
-    --color-secundario: #F26B38;
-    --color-fondo: #F2F2F2;
-    --color-blanco: #FFFFFF;
-    --fuente-titulos: 'Bebas Neue', sans-serif;
-    --fuente-texto: 'Roboto', sans-serif;
-  }
-  
-  /* ------------------ RESET ------------------ */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: var(--fuente-texto);
-    background-color: var(--color-fondo);
-    color: var(--color-primario);
-    line-height: 1.6;
-  }
-  
-/* ------------------ HEADER ------------------ */
+  --color-primario: #1a2e40;
+  --color-secundario: #f26b38;
+  --color-fondo: #f2f2f2;
+  --color-blanco: #fff;
+  --fuente-titulos: 'Bebas Neue', sans-serif;
+  --fuente-texto: 'Roboto', sans-serif;
+  --transicion: 0.3s ease;
+  --sombra: 0 4px 10px rgba(0,0,0,0.1);
+  --radio-borde: 8px;
+  --max-width: 1200px;
+}
+
+/* =================== RESET Y BASE =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  background-color: var(--color-fondo);
+  color: var(--color-primario);
+  line-height: 1.6;
+}
+
+/* =================== LAYOUT GENERAL =================== */
+.contenedor, 
+.contenedor-header {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =================== HEADER Y NAVEGACIÓN =================== */
 header {
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    padding: 10px 20px;
-  }
-  
-  .contenedor-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-  }
-  
-  .logo img {
-    width: 250px;
-    height: auto;
-  }
-  
-  /* ------------------ NAV ------------------ */
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: var(--color-blanco);
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  nav a:hover {
-    color: var(--color-secundario);
-  }
-  
-  /* ------------------ HERO ------------------ */
-  .hero {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: var(--color-blanco);
-  }
-  
-  .hero h2 {
-    font-family: var(--fuente-titulos);
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-  }
-  
-  .hero p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-  }
-
-  /* ------------------ DESTACADO ------------------ */
-  .destacado {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 20px;
-  }
-  
-  .destacado img {
-    max-width: 800px;
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-
-/* ------------------ CTA WHATSAPP ------------------ */
-.cta-wsp {
-  background-color: var(--color-primario); /* azul oscuro */
+  background-color: var(--color-primario);
   color: var(--color-blanco);
-  text-align: center;
-  padding: 50px 20px;
+  padding: 10px 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.cta-wsp h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  font-family: var(--fuente-titulos);
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.cta-wsp p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
+.logo img {
+  width: 350px;
+  height: auto;
+  max-width: 100%;
 }
 
-.btn-whatsapp {
-  display: inline-block;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 24px;
-  font-weight: bold;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--color-blanco);
   text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-  margin-top: 15px;
+  font-weight: bold;
+  transition: color var(--transicion);
 }
 
-.btn-whatsapp:hover {
-  background-color: #128C7E;
+nav a:hover {
+  color: var(--color-secundario);
 }
 
-  /* ------------------ FOOTER ------------------ */
-  footer {
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.9rem;
-  }
-
-
-/* ------------------ CARRUSEL CON SCROLL MANUAL ------------------ */
-
+/* =================== CARRUSEL =================== */
 .carrusel {
   position: relative;
   max-width: 1200px;
@@ -207,117 +142,131 @@ header {
 .indicador.active {
   background-color: white;
 }
-
-/* Estilos para las imágenes responsive */
-.carrusel-img {
-  width: 100%;
-  height: auto;
-  max-height: 90vh;
-  object-fit: cover;
-  display: block; /* Asegura que no haya espacio extra debajo */
-}
-
-/* Opcional: Ajustes para diferentes tamaños de pantalla */
-@media (max-width: 768px) {
-  .carrusel-img {
-      max-height: 60vh; /* Altura menor en móviles */
-  }
-}
-  /* ------------------ BOTÓN FLOTANTE WHATSAPP ------------------ */
-
-  .whatsapp-fijo {
-    position: fixed;
-    bottom: 70px;
-    right: 50px;
-    z-index: 1000;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-  }
-  
-  .whatsapp-fijo svg {
-    width: 100%;
-    height: 100%;
-    fill: #25D366; /* Color verde de WhatsApp */
-    transition: transform 0.2s ease;
-  }
-  
-  .whatsapp-fijo:hover svg {
-    transform: scale(1.1);
-    fill: #1eb250; /* Verde más oscuro al pasar el mouse */
-  }
-  
-/* ------------------ PÁGINA DE CONTACTO ------------------ */
-.contacto-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.contacto-page main {
-  flex: 1;
-}
-
-.contacto-page footer {
-  width: 100%;
-  background-color: var(--color-primario);
-  color: var(--color-blanco);
-  text-align: center;
-  padding: 15px 10px;
-  font-size: 0.9rem;
-  margin-top: auto;
-}
-
-
-.contacto {
+/* =================== SECCIONES COMUNES =================== */
+.hero, .cta-wsp, .contacto, .nosotros {
   padding: 40px 20px;
-  max-width: 800px;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+.hero {
+  text-align: center;
+  background-color: var(--color-blanco);
+}
+
+.hero h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.destacado{
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.contacto h1 {
-  font-family: var(--fuente-titulos);
-  color: var(--color-primario);
+.destacado img {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0;
+}
+
+/* =================== WHATSAPP =================== */
+.cta-wsp {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
   text-align: center;
-  margin-bottom: 30px;
+}
+
+.cta-wsp h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25d366;
+  color: var(--color-blanco);
+  padding: 12px 24px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: var(--radio-borde);
+  transition: background-color var(--transicion);
+  margin-top: 15px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128c7e;
+}
+
+/* =================== PÁGINAS ESPECÍFICAS =================== */
+/* Contacto */
+.contacto{
+  background-color: var(--color-blanco);
+  display: grid;
+  justify-items: center;
+}
+.contacto-page {
+  height: 100vh;
 }
 
 .contacto-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
+  margin-top: 30px;
 }
 
-.contacto-info .datos p {
+.mapa {
+  flex: 1;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: var(--radio-borde);
+}
+
+.datos {
+  flex: 1;
+}
+
+.datos p {
   font-size: 1.1rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.contacto-info .datos a {
+.datos a {
   color: var(--color-secundario);
   text-decoration: none;
   font-weight: bold;
 }
 
-/* ------------------ NOSOTROS ------------------ */
-.nosotros {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+/* Nosotros */
+.nosotros{
+  background-color: var(--color-blanco);
 }
-
-.nosotros h1 {
-  font-family: var(--fuente-titulos);
-  color: var(--color-primario);
-  text-align: center;
-  margin-bottom: 30px;
-}
-
 .nosotros-contenido {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
+  margin-top: 30px;
+}
+
+.nosotros .texto {
+  flex: 1;
 }
 
 .nosotros .texto p {
@@ -326,123 +275,59 @@ header {
   margin-bottom: 15px;
 }
 
+.nosotros .imagen {
+  flex: 1;
+}
+
 .nosotros .imagen img {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra);
 }
 
-.catalogo {
-  padding: 40px 20px;
+/* =================== FOOTER =================== */
+footer {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.contenedor-catalogo {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-/* Sidebar */
-.filtros {
-  flex: 1 1 200px;
-  background-color: var(--color-blanco);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  height: fit-content;
-  position: sticky;
-  top: 20px;
-}
-
-.filtros h2 {
-  font-family: var(--fuente-titulos);
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
-.filtros ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.filtros button {
-  background-color: transparent;
-  border: none;
-  font-weight: bold;
-  color: var(--color-primario);
-  cursor: pointer;
-  padding: 8px 12px;
-  text-align: left;
-  transition: background-color 0.2s ease;
-}
-
-.filtros button:hover,
-.filtros button.activo {
-  background-color: var(--color-secundario);
-  color: var(--color-blanco);
-  border-radius: 4px;
-}
-
-/* Productos en grid */
-.productos {
-  flex: 3;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.producto {
-  background-color: var(--color-blanco);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-  transition: transform 0.2s ease;
-  text-align: center;
-}
-
-.producto:hover {
-  transform: scale(1.02);
-}
-
-.producto img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.producto h3 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-}
-
-.producto .categoria {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 5px;
-}
-
-.producto .precio {
-  font-weight: bold;
-  color: var(--color-secundario);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .contenedor-catalogo, 
-  .contenedor-header{
+/* =================== MEDIA QUERIES =================== */
+@media (max-width: 1024px) {
+  .contacto-info, .nosotros-contenido {
     flex-direction: column;
   }
-
-  .filtros {
-    position: static;
+  
+  .mapa, .nosotros .imagen {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .hero h2, .cta-wsp h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p, .datos p {
+    font-size: 1rem;
   }
 }
