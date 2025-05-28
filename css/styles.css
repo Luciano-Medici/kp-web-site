@@ -154,13 +154,11 @@ header {
 .carrusel-item {
   min-width: 100%;
   box-sizing: border-box;
-  margin: 10px 0;
 }
 
 .carrusel-item img {
   width: 100%;
   display: block;
-  border-radius: 20px;
 }
 
 .carrusel-btn {
