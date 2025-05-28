@@ -30,15 +30,52 @@
     </div>
   </header>
   
-  <div class="carrusel-scroll">
-    <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
-    <div class="contenedor-scroll" id="carrusel-scroll">
-      <img src="img/img_carrusel_1.png" alt="Imagen 1" />
-      <img src="img/img_carrusel_2.png" alt="Imagen 2" />
-      <img src="img/img_carrusel_3.png" alt="Imagen 3" />
+  <div class="carrusel">
+    <div class="carrusel-inner">
+        <div class="carrusel-item active">
+          <img src="./img/carrusel/img1-large.png" 
+          srcset="./img/carrusel/img1-small.png 640w, 
+                  ./img/carrusel/img1-medium.png 1024w, 
+                  ./img/carrusel/img1-large.png 1600w"
+          sizes="(max-width: 768px) 640px, 
+                 (max-width: 1024px) 1024px, 
+                 1600px"
+          alt="Descripción foto 1"
+          class="carrusel-img">
+        </div>
+        <div class="carrusel-item">
+          <img src="./img/carrusel/img2-large.png" 
+          srcset="./img/carrusel/img2-small.png 640w, 
+                  ./img/carrusel/img2-medium.png 1024w, 
+                  ./img/carrusel/img2-large.png 1600w"
+          sizes="(max-width: 768px) 640px, 
+                 (max-width: 1024px) 1024px, 
+                 1600px"
+          alt="Descripción foto 1"
+          class="carrusel-img">
+        </div>
+        <div class="carrusel-item">
+          <img src="./img/carrusel/img3-large.png" 
+          srcset="./img/carrusel/img3-small.png 640w, 
+                  ./img/carrusel/img3-medium.png 1024w, 
+                  ./img/carrusel/img3-large.png 1600w"
+          sizes="(max-width: 768px) 640px, 
+                 (max-width: 1024px) 1024px, 
+                 1600px"
+          alt="Descripción foto 1"
+          class="carrusel-img">
+        </div>
     </div>
-    <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
-  </div>
+    
+    <button class="carrusel-btn prev">&#10094;</button>
+    <button class="carrusel-btn next">&#10095;</button>
+    
+    <div class="carrusel-indicadores">
+        <span class="indicador active" data-index="0"></span>
+        <span class="indicador" data-index="1"></span>
+        <span class="indicador" data-index="2"></span>
+    </div>
+</div>
 
   <!-- Sección principal de bienvenida -->
   <div class="hero">
