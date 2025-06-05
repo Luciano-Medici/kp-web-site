@@ -287,6 +287,119 @@ nav a:hover {
   box-shadow: var(--sombra);
 }
 
+/* Catálogo */
+
+.contenedor-catalogo {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.filtros {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.filtros h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-family: var(--fuente-titulos);
+}
+
+.filtros ul {
+  list-style: none;
+  padding: 0;
+}
+
+.filtros li {
+  margin-bottom: 10px;
+}
+
+.filtros button {
+  background-color: transparent;
+  border: 1px solid var(--color-principal);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: background-color 0.3s ease;
+}
+
+.filtros button.activo,
+.filtros button:hover {
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+
+.product-card .categoria {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.product-card .texto{
+  font-size: 0.7rem;
+}
+
+.product-card .precio {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--color-principal);
+}
+
+.product-card img {
+  transition: opacity 0.4s;
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.product-card img[src] {
+  opacity: 1;
+}
+
+.product-card img:not([src]) {
+  background: linear-gradient(45deg, #eee 25%, #f9f9f9 50%, #eee 75%);
+  background-size: 200% 200%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+
 /* =================== FOOTER =================== */
 footer {
   background-color: var(--color-primario);
@@ -308,6 +421,17 @@ footer {
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .contenedor-catalogo {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros {
+    margin-bottom: 30px;
+  }
+}
+
 
 @media (max-width: 768px) {
   .contenedor-header {

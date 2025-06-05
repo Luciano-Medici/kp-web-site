@@ -54,3 +54,30 @@ document.addEventListener('DOMContentLoaded', function() {
   carruselInner.addEventListener('mouseenter', () => clearInterval(intervalo));
   carruselInner.addEventListener('mouseleave', reiniciarIntervalo);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const botonesCategoria = document.querySelectorAll('.filtros button');
+    const productos = document.querySelectorAll('.producto');
+
+    botonesCategoria.forEach(boton => {
+      boton.addEventListener('click', () => {
+        // Sacar clase 'activo' de todos los botones
+        botonesCategoria.forEach(btn => btn.classList.remove('activo'));
+
+        // Agregar clase 'activo' al botón clickeado
+        boton.classList.add('activo');
+
+        const categoriaSeleccionada = boton.getAttribute('data-categoria');
+
+        productos.forEach(producto => {
+          const categoriaProducto = producto.getAttribute('data-categoria');
+
+          if (categoriaSeleccionada === 'todos' || categoriaSeleccionada === categoriaProducto) {
+            producto.style.display = 'block';
+          } else {
+            producto.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
