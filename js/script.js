@@ -1,3 +1,21 @@
+function adjustBodyPadding() {
+  const header = document.querySelector('header');
+  if (header) {
+    const headerHeight = header.getBoundingClientRect().height;
+    document.body.style.paddingTop = `${headerHeight}px`;
+  }
+}
+
+// Ejecutar en: carga, resize, y si hay imágenes/efectos en el header
+window.addEventListener('DOMContentLoaded', adjustBodyPadding);
+window.addEventListener('load', adjustBodyPadding);
+window.addEventListener('resize', adjustBodyPadding);
+
+// Opcional: Observar cambios dinámicos en el header (como menús responsive)
+const headerObserver = new ResizeObserver(adjustBodyPadding);
+if (document.querySelector('header')) {
+  headerObserver.observe(document.querySelector('header'));
+}
 document.addEventListener('DOMContentLoaded', function() {
   const carruselInner = document.querySelector('.carrusel-inner');
   const items = document.querySelectorAll('.carrusel-item');

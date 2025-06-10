@@ -37,12 +37,16 @@ body {
 
 /* =================== HEADER Y NAVEGACIÓN =================== */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: var(--color-primario);
   color: var(--color-blanco);
   padding: 10px 0;
-  max-width: 1200px;
-  margin: 0 auto;
+  z-index: 1000;
 }
+
 
 .contenedor-header {
   display: flex;
@@ -51,7 +55,7 @@ header {
 }
 
 .logo img {
-  width: 350px;
+  width: 300px;
   height: auto;
   max-width: 100%;
 }

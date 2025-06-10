@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header>
     <div class="contenedor-header">
       <div class="logo">
@@ -104,7 +103,7 @@
     html += `
       <div class="product-card" data-categoria="${producto.Categoria}">
         <img 
-          src="img/placeholder.jpg" 
+          src="img/placeholder.svg" 
           data-src="${imagenURL}" 
           alt="${producto.Nombre}"
           loading="lazy"
@@ -164,5 +163,6 @@ function iniciarLazyLoad() {
     // Iniciar
     document.addEventListener('DOMContentLoaded', cargarProductos);
   </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
